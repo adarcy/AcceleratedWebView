@@ -7,6 +7,7 @@ import android.graphics.Bitmap;
 import android.net.http.SslError;
 import android.os.Build.VERSION_CODES;
 import android.os.Bundle;
+import android.os.Environment;
 import android.support.annotation.NonNull;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
@@ -23,8 +24,10 @@ import android.webkit.WebViewClient;
 import android.widget.TextView;
 import java.io.IOException;
 import java.io.InputStream;
+
 import me.mundane.acceleratedwebview.R;
 import me.mundane.acceleratedwebview.utils.DataHelper;
+import me.mundane.acceleratedwebview.utils.FileUtils;
 import me.mundane.acceleratedwebview.utils.WebViewUtil;
 
 public class YuGangShuoWebActivity extends AppCompatActivity {
@@ -53,6 +56,9 @@ public class YuGangShuoWebActivity extends AppCompatActivity {
         mTvLoadingTime = (TextView) findViewById(R.id.tv_loading_time);
         WebViewUtil.configWebView(mWebview);
         mDataHelper = new DataHelper();
+
+        FileUtils.getInstance(this).copyAssetsToSD("web","aaa/web");
+
         mWebview.setWebViewClient(new WebViewClient() {
             
             @Override
@@ -146,8 +152,11 @@ public class YuGangShuoWebActivity extends AppCompatActivity {
             }
         });
         String url = YU_GANG_SHUO_URL;
-        mWebview.loadUrl(url);
+//        mWebview.loadUrl(url);
+//        mWebview.loadUrl("file:///android_asset/web/index.html");
+        mWebview.loadUrl("file://"+Environment.getExternalStorageDirectory().getPath()+"/aaa/web/index.html");
         mStartTime = System.currentTimeMillis();
+
     }
     
     @NonNull

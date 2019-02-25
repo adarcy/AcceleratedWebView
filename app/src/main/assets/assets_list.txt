@@ -1,0 +1,2 @@
+web/img/top.jpg
+web/index.html
