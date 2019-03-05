@@ -23,4 +23,18 @@
         android:layout_height="wrap_content"
         />
 
+    <Button
+        android:onClick="download"
+        android:text="下载"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+
+    <Button
+        android:onClick="unzip"
+        android:text="解压"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+
 </LinearLayout>

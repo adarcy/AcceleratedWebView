@@ -4,6 +4,8 @@ import android.app.Application;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
+import com.blankj.utilcode.util.Utils;
+
 /**
  * Created by mundane on 2018/8/26 下午8:24
  */
@@ -23,7 +25,7 @@ public class DemoApplication extends Application {
                 return true;
             }
         });
-
+        Utils.init(this);
         //destroyWebView(webView);
     }
     
