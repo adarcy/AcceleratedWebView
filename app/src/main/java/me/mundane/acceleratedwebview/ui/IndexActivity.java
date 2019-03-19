@@ -11,7 +11,6 @@ import android.view.View;
 
 import com.blankj.utilcode.util.LogUtils;
 import com.blankj.utilcode.util.ToastUtils;
-import com.blankj.utilcode.util.Utils;
 import com.blankj.utilcode.util.ZipUtils;
 
 import java.io.IOException;
@@ -74,5 +73,9 @@ public class IndexActivity extends AppCompatActivity {
             e.printStackTrace();
             LogUtils.e(e.toString());
         }
+    }
+
+    public void cookie(View view) {
+        CookieWebActivity.go2CookieWebActivity(this,false);
     }
 }

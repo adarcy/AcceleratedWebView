@@ -6,6 +6,8 @@ import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
 
+import com.blankj.utilcode.util.ResourceUtils;
+
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.InputStream;
@@ -101,6 +103,10 @@ public class FileUtils {
         void onSuccess();
 
         void onFailed(String error);
+    }
+
+    public static void copyFileFromAssets(String srcPath, String dstPath) {
+        ResourceUtils.copyFileFromAssets(srcPath, dstPath);
     }
 
 }

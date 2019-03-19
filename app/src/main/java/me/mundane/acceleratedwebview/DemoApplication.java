@@ -13,6 +13,7 @@ import com.blankj.utilcode.util.Utils;
 public class DemoApplication extends Application {
     private final String YU_GANG_SHUO_URL = "http://renyugang.io/post/75";
     private static WebView mWebView;
+    public static String cookie = "";
     
     @Override
     public void onCreate() {
