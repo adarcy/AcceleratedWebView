@@ -104,6 +104,8 @@ public class CookieWebActivity extends AppCompatActivity {
                 mTvLoadingTime.setText(String.format("加载耗时%d毫秒", loadingTime));
                 mStartTime = 0;
                 mEndTime = 0;
+                mWebview.loadUrl("javascript: window.alert('hello');");
+
             }
             
             // 设置不用系统浏览器打开,直接显示在当前Webview
@@ -140,7 +142,8 @@ public class CookieWebActivity extends AppCompatActivity {
             }
         });
         setCookie();
-        String url = YU_GANG_SHUO_URL;
+//        String url = YU_GANG_SHUO_URL;
+        String url = "http://www.baidu.com";
         mWebview.loadUrl(url);
 //        mWebview.loadUrl("file:///android_asset/web/index.html");
 //        mWebview.loadUrl("file://"+Environment.getExternalStorageDirectory().getPath()+"/aaa/web/index.html");
